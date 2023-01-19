@@ -1,0 +1,100 @@
+
+# bin_str_1 = bin_dec_convert(bin_str_1)
+# bin_str_2 = bin_dec_convert(bin_str_2)
+# bin_str_1 = int(bin_str_1)
+# bin_str_2 = int(bin_str_2)
+# decnum = bin_str_1 + bin_str_2
+# decnum = int(decnum)
+# result = dec_bin_convert(decnum)
+# result = str(result)
+# return result
+
+# def dec_bin_convert(dec_num):
+
+#     if not dec_num in range(0, 256):
+#         return f"Not in range"
+#     binary_number = ""
+#     list_of_bits = [128, 64, 32, 16, 8, 4, 2, 1]
+#     for bit in list_of_bits:
+#         if dec_num >= bit:
+#             binary_number += "1"
+#             dec_num -= bit
+#         else:
+#             binary_number += "0"
+
+#     return binary_number
+
+
+# user_input = int(input("Please enter a number between 0 to 255: "))
+
+# print(dec_bin_convert(user_input))
+# # ******************************************************************************************************
+# # ******************************************************************************************************
+# def bin_dec_convert(bin_str):
+#     base_int = 0
+#     bit_val = 128
+#     if len(bin_str) != 8:
+#         return "That is not a valid number"
+#     for num in bin_str:
+#         # "11110011"
+#         if num == "1":
+#             base_int += bit_val
+
+#         #   bit_val /= 2
+#         bit_val = int(bit_val / 2)
+#     return base_int
+
+
+# user_bin_input = input("Please enter a 8 bit binary number: ")
+# print(bin_dec_convert(user_bin_input))
+
+# Verify both strings are the same length (look at zfill)
+# Add some kind of carry logic
+# make a truth chart (every possible outcome)
+# carry variable?
+# are you adding adding from left to right or right to left?
+
+
+from operator import index
+
+
+def bin_add(bin_str_1, bin_str_2):
+    result = ""
+    print(bin_str_1)
+    print(bin_str_2)
+    idx = -1
+    for i in bin_str_2:
+        if i == bin_str_1[idx] and i == "1":
+            result += "0"
+            idx -= 1
+        elif i == bin_str_1[idx] and i == "1":
+            result += ["0"]
+            idx -= 1
+
+    return result
+
+    # carry = False
+    # counter = 0
+    # for i in bin_str_2:
+    #     print(bin_str_1[counter])
+    #     counter += 1
+    #     if carry == True:
+    #         do something here
+    #     if i == bin_str_1[0] and i == "1":
+    #         result += "0"
+    #         carry = True
+    #     elif i in bin_str_1 == n in bin_str_2 and i == "0":
+    #         result += "0"
+    #     elif (
+    #         bin_str_1 == "1"
+    #         and bin_str_2 == "0"
+    #         or bin_str_1 == "0"
+    #         and bin_str_2 == "1"
+    #     ):
+    #         result += "1"
+    # return result
+
+
+# str_1 = "01001"
+# str_2 = "10010"
+print(bin_add("10010", "01001"))
